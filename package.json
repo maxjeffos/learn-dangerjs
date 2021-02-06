@@ -1,0 +1,47 @@
+{
+  "name": "learn-dangerjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test:checks": "npm run eslint && npm run format:check",
+    "test": "npm run test:unit",
+    "test:unit": "jest",
+    "test:unit-verbose": "jest --silent=false --verbose=true",
+    "test:special": "jest src/__tests__/exec-shell.test.ts",
+    "clear-jest-cache": "jest --clearCache",
+    "prestart": "tsc",
+    "start": "node dist/main.js",
+    "eslint": "eslint --cache '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'",
+    "format:check": "prettier --check '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'",
+    "format": "prettier --write '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.1",
+    "@types/q": "^1.5.2",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.2",
+    "jest": "^24.9.0",
+    "mock-fs": "^4.11.0",
+    "os-name": "^3.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/semver": "^7.2.0",
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "semver": "^7.3.2"
+  }
+}
